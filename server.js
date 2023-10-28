@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 
 // Google Auth
 const {OAuth2Client} = require('google-auth-library');
-const CLIENT_ID = '333642631602-h2l1m29lfb5c1d0dta76nvv4so4bjeo4.apps.googleusercontent.com'
+const CLIENT_ID = '527356570945-p65e7hs4pqsj807pf17vdniohaoh8oos.apps.googleusercontent.com'
 const client = new OAuth2Client(CLIENT_ID);
 
 
@@ -37,6 +37,7 @@ app.post('/login', (req,res)=>{
         });
         const payload = ticket.getPayload();
         const userid = payload['sub'];
+        console.log(payload);
       }
       verify()
       .then(()=>{
